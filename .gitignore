@@ -1,0 +1,5 @@
+/target
+.env
+Cargo.lock
+message(1).txt
+stripe.exe

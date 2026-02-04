@@ -1,0 +1,34 @@
+[package]
+name = "ruststripe"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# Framework web
+axum = "0.7"
+tokio = { version = "1", features = ["full"] }
+tower = "0.4"
+tower-http = { version = "0.5", features = ["cors", "trace"] }
+
+# Stripe (fork maintenu)
+async-stripe = { version = "0.38", features = ["runtime-tokio-hyper"] }
+
+# Sérialisation
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Base de données en mémoire (pour démo)
+dashmap = "6.0"
+
+# Utilitaires
+uuid = { version = "1.10", features = ["v4", "serde"] }
+chrono = { version = "0.4", features = ["serde"] }
+thiserror = "1.0"
+anyhow = "1.0"
+
+# Tracing et logs
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+# Variables d'environnement
+dotenvy = "0.15"
